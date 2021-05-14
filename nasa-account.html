@@ -1,0 +1,114 @@
+<html>
+<head>
+<title> account page </title>
+<script type="text/javascript">
+
+function GenerateCaptcha() {
+  var chr1 = Math.ceil(Math.random() * 9)+ '';
+  var chr2 = Math.ceil(Math.random() * 9)+ '';
+  var chr3 = Math.ceil(Math.random() * 9)+ '';
+  var chr4 = Math.ceil(Math.random() * 9)+ '';
+  var chr5 = Math.ceil(Math.random() * 9)+ '';
+
+  var captchaCode = chr1 + ' ' + chr2 + ' ' + chr3 + ' ' + chr4 + ' ' + chr5 + ' ';
+  document.getElementById("txtCaptcha").value = captchaCode
+}
+
+function removeSpaces(string) {
+  return string.split(' ').join('');
+}
+
+function ValidCaptcha() {
+  var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+  var str2 = removeSpaces(document.getElementById('txtCompare').value);
+var p= removeSpaces(document.getElementById('password').value);
+var user= removeSpaces(document.getElementById('username').value);
+
+  if (str1 != str2){
+    alert("Captcha is incorrect");}
+  else{
+    if (user ==""){
+    alert("Please enter Username");}
+    else if(p == ""){
+        alert("Please enter password");
+      }
+    else{
+    if(document.getElementById('yes').checked) {
+      location.href= "http://localhost/INTECH-IT/nasa-volunteer.html";}
+    else if(document.getElementById('no').checked) {
+        location.href= "http://localhost/INTECH-IT/NASA-home.html";}
+    else{
+      alert("Please select yes or no")
+    }
+    }
+    }
+}
+</script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:#ffb366;" onload = "GenerateCaptcha()">
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+
+  <a class="navbar-brand" href="#">
+    <img src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg"  style="width:80px;">
+  </a>
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link; text-light" href="http://localhost/INTECH-IT/nasa-home.html"style= "margin: 15px; font-size: 20px">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link; text-light" href="http://localhost/INTECH-IT/nasa-account.html" style= "margin: 15px; font-size: 20px">Create an account</a>
+    </li><br>
+
+  </ul>
+</nav>
+<center>
+<h1 style="margin-top: 100px" > CREATE AN ACCOUNT </h1>
+<center>
+<div class="container">
+
+  <form class="was-validated">
+    <div class="form-group">
+      <br>
+      <br>
+      <label for="username" style="font-size:25px">Username:</label>
+      <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" style="width:300px" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="password" style="font-size:25px">Password:</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" style="width:300px" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+  </form>
+  </div>
+  </center>
+  <center>
+<input type="text" id="txtCaptcha" style="text-align: center; border: none; font-weight: bold; height:25px; width:110px;" />
+<input type="button" id="btnrefresh" value="Refresh" onclick="GenerateCaptcha();" />
+<br><br>
+<input type="text" style="text-align: center" id="txtCompare" placeholder="Enter captcha to verify"/>
+<br><br>
+<div id="flags">
+<label style="font-size:20px; margin-right:20px ">Do you wish to volunteer for the <b>Mars visiting program</b>?</label><br>
+<input type="radio" id="yes" value="yes" name="flag">
+<label for="yes" style="font-size:20px; margin-left:10px">Yes</label>
+<input type="radio" id="no" value="no" name="flag" style="margin-left:25px">
+<label for="no" style="font-size:20px; margin-left:10px">No</label><br><br>
+</div>
+<button type="submit" class="btn btn-primary" onclick="ValidCaptcha()" >Submit</button>
+</center>
+
+
+</body>
+</html>
