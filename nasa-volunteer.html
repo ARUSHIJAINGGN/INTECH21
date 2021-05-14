@@ -15,12 +15,12 @@
  body {
     width: 100%;
     height:100%;
-    background-image: url('bg.jpg');
+    background-image: url('https://www.vaisala.com/sites/default/files/styles/16_9_liftup_extra_large/public/images/LIFT-Mars_3D-illustration_1600x900.jpg');
     background-repeat: no-repeat;
     background-size: cover;}
 </style>
 </head>
-<body style="background-image: url('bg.jpg');  color: white;">
+<body style="background-image: url('https://www.vaisala.com/sites/default/files/styles/16_9_liftup_extra_large/public/images/LIFT-Mars_3D-illustration_1600x900.jpg');  color: black;">
 
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
 
@@ -46,20 +46,22 @@
 <br>
 <center>
 <form action="marsvolunteer.php" method="POST">
-  <label style="font-size:25px; margin-right:50px ">Name:</label>
+  <label style="font-size:20px; margin-right:50px "><b>Name:</b></label>
   <input type= "text" name= "name" placeholder= "Enter full name" pattern="[A-Za-z ]{2,40}" required><br>
-  <label for="email" style="font-size:25px; margin-right:27px ">Email ID:</label>
+  <label for="email" style="font-size:20px; margin-right:27px "><b>Email ID:</b></label>
   <input type="email" placeholder="Enter email id" id="email" name="email" required><br>
-  <label style="font-size:25px; margin-right:48px ">Phone:</label>
+  <label style="font-size:20px; margin-right:48px "><b>Phone:</b></label>
   <input type= "tel" placeholder="At least 10-digits" name= "phone" pattern="[0-9-+ ]{10,16}" required><br>
-  <label for="age" style="font-size:25px; margin-right:75px "> Age:</label>
-  <input type="number" id="age" name="age" min="18" max="75" required><br>
-  <label style="font-size:25px; margin-right:20px ">Gender:</label><br>
+  <label for="age" style="font-size:20px; margin-right:75px "> <b>Age:</b></label>
+  <input type="number" id="age" name="age" min="18" max="75" required><br><br>
+  <label style="font-size:20px; margin-right:20px "><b>Gender:</b></label><br>
   <input type="radio" id="male" value="male" name="gender">
-  <label for="male" style="font-size:25px; margin-left:10px"> Male</label>
+  <label for="male" style="font-size:20px; margin-left:10px"> <b>Male</b></label>
   <input type="radio" id="female" value="female" name="gender"style="margin-left:25px">
-  <label for="female" style="font-size:25px; margin-left:10px"> Female</label><br>
-  <label for="country" style="font-size:25px "> Country:</label>
+  <label for="female" style="font-size:20px; margin-left:10px"> <b>Female</b></label>
+  <input type="radio" id="others" value="others" name="others"style="margin-left:25px">
+  <label for="others" style="font-size:20px; margin-left:10px"> <b>Others</b></label><br><br>
+  <label for="country" style="font-size:20px "><b> Country:</b></label>
   <select id="country" name="country" class="form-control" style="width:200px " required>
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
